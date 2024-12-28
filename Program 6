@@ -1,0 +1,29 @@
+//Task 6: Print Month Name
+//Here's a program that prints the month name based on an input number between 1 and 12:
+
+using System;
+
+namespace PrintMonthName
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a month number (1 to 12):");
+            int month = int.Parse(Console.ReadLine());
+
+            if (month < 1 || month > 12)
+            {
+                Console.WriteLine("The number must be between 1 and 12.");
+            }
+            else
+            {
+                string[] months = {
+                    "January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                };
+                Console.WriteLine($"The month is: {months[month - 1]}");
+            }
+        }
+    }
+}
