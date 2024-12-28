@@ -1,0 +1,40 @@
+//Task 4: Search in 2D Array
+//Here's a program to search for a number in a predefined 2D array:
+
+using System;
+
+namespace Search2DArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+            };
+
+            Console.WriteLine("Enter a number to search:");
+            int number = int.Parse(Console.ReadLine());
+            bool found = false;
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (matrix[i, j] == number)
+                    {
+                        found = true;
+                        Console.WriteLine($"Number found at position: ({i}, {j})");
+                        break;
+                    }
+                }
+                if (found) break;
+            }
+
+            if (!found)
+                Console.WriteLine("Number not found in the matrix.");
+        }
+    }
+}
